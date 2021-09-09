@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import se331.lab.rest.entity.Event;
 import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.repository.EventRepository;
 import se331.lab.rest.repository.OrganizerRepository;
 
-import javax.transaction.Transactional;
 @Component
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Autowired
@@ -19,13 +19,11 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Override
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+//        eventRepository.save(Event.builder()
         Organizer org1, org2, org3;
-        org1 = organizerRepository.save(Organizer.builder()
-                .name("CAMT").build());
-        org2 = organizerRepository.save(Organizer.builder()
-                .name("CAMT").build());
-        org3 = organizerRepository.save(Organizer.builder()
-        .name("ChiangMai").build());
+        org1 = organizerRepository.save(Organizer.builder().name("CAMT").build());
+        org2 = organizerRepository.save(Organizer.builder().name("CMU").build());
+        org3 = organizerRepository.save(Organizer.builder().name("ChiangMai").build());
         Event tempEvent;
         tempEvent = eventRepository.save(Event.builder()
                 .category("Academic")

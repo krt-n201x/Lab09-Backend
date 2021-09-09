@@ -5,11 +5,13 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
 @Data
 @Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+
 
 public class Organizer {
     @Id

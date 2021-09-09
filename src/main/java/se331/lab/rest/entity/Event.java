@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +25,6 @@ public class Event {
     Boolean petAllowed;
     @ManyToOne
     Organizer organizer;
-    @ManyToMany (mappedBy = "eventHistory")
-    List<Participant> participant;
+    @ManyToMany(mappedBy = "eventHistory")
+    List<Participant> participants;
 }

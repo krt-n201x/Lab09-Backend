@@ -20,4 +20,5 @@ public class Participant {
     String telNo;
     @ManyToMany
     List<Event> eventHistory;
+
 }
