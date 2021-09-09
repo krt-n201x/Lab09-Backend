@@ -62,6 +62,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .build());
         tempEvent.setOrganizer(org1);
         org1.getOwnEvents().add(tempEvent);
+        pap1.getEventHistory().add(tempEvent);
+        pap2.getEventHistory().add(tempEvent);
+        pap3.getEventHistory().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Loy Krathong")
@@ -73,6 +76,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .build());
         tempEvent.setOrganizer(org2);
         org2.getOwnEvents().add(tempEvent);
+        pap1.getEventHistory().add(tempEvent);
+        pap2.getEventHistory().add(tempEvent);
+        pap3.getEventHistory().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Songkran")
@@ -84,5 +90,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .build());
         tempEvent.setOrganizer(org3);
         org3.getOwnEvents().add(tempEvent);
+        pap4.getEventHistory().add(tempEvent);
+        pap5.getEventHistory().add(tempEvent);
+        pap3.getEventHistory().add(tempEvent);
     }
 }
